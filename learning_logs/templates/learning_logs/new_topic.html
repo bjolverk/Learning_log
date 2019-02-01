@@ -1,0 +1,9 @@
+{% extends "learning_logs/base.html" %}
+{% block content %}
+  <h3>Введите новую тему:</h3>
+  <form action="{% url 'learning_logs:new_topic' %}" method="post">
+    {% csrf_token %} {{ form.as_p }}
+    <button name="submit" class="btn btn-warning">Добавить тему</button>
+  </form>
+
+  {% endblock content %}
